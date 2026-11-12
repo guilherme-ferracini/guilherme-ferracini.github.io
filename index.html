@@ -90,13 +90,14 @@
     header{padding:64px 0 48px}
   }
   @media (max-width:520px){.steps{grid-template-columns:1fr}.case dl{grid-template-columns:1fr}.case dt{padding-top:6px}}
-  .repos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .repos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .repo{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.15s}
   .repo:hover{border-color:var(--accent);transform:translateY(-2px)}
   .repo h4{font-size:17px;margin-bottom:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
   .repo p{color:#cdd6df;font-size:14.5px}
   .repo small{display:block;color:var(--muted);font-size:12.5px;margin-top:10px}
-  @media (max-width:860px){.repos{grid-template-columns:1fr}}
+  @media (max-width:980px){.repos{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.repos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -201,10 +202,15 @@
 <section id="code">
   <div class="wrap">
     <h2>Code samples</h2>
-    <p class="sub">Clean, standalone rewrites of the ideas above, with fictional data, tests and a demo mode that runs without an API key. Python, with Claude or OpenAI as the AI provider.</p>
+    <p class="sub">Clean, standalone rewrites of the ideas above, with fictional data, automated tests and a demo mode that runs without an API key. Python and SQL, with Claude or OpenAI as the AI provider.</p>
     <div class="repos">
-      <a class="repo" href="https://github.com/guilherme-ferracini/pdf-to-erp-extractor" target="_blank" rel="noopener"><h4>pdf-to-erp-extractor</h4><p>Health-plan invoice PDFs → AI extraction → validated payroll import file. Invoices with inconsistent totals are blocked for review.</p><small>Python · pdfplumber · LLM APIs · openpyxl</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/accounting-ops-agent" target="_blank" rel="noopener"><h4>accounting-ops-agent</h4><p>Tool-using AI agent that answers an accounting team's client questions through auditable tool calls. Native tool calling on Claude or OpenAI.</p><small>Python · LLM tool calling · pytest</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/bank-reconciliation" target="_blank" rel="noopener"><h4>bank-reconciliation</h4><p>Bank statement vs. ledger in passes: exact, date window, then an LLM judge only for ambiguous lines. Amounts never cross-match.</p><small>Python · Decimal · LLM APIs</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/ops-metrics-sql" target="_blank" rel="noopener"><h4>ops-metrics-sql</h4><p>Event log → SLA, cycle time (median/p90), stage bottlenecks, rework and backlog in plain SQL, with an HTML dashboard.</p><small>SQL · SQLite · window functions</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/pdf-to-erp-extractor" target="_blank" rel="noopener"><h4>pdf-to-erp-extractor</h4><p>Health-plan invoice PDFs → AI extraction → validated payroll import file. Inconsistent invoices are blocked for review.</p><small>Python · pdfplumber · LLM APIs · openpyxl</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/document-triage" target="_blank" rel="noopener"><h4>document-triage</h4><p>Classifies and routes client documents to the right team, validates CNPJs and sends low-confidence cases to manual review.</p><small>Python · LLM APIs · rules</small></a>
       <a class="repo" href="https://github.com/guilherme-ferracini/financial-statement-analyzer" target="_blank" rel="noopener"><h4>financial-statement-analyzer</h4><p>Income statement + balance sheet → ratios, rule-based alerts and an AI-written executive summary. Code computes, the model explains.</p><small>Python · LLM APIs · pytest</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/crm-funnel-sql" target="_blank" rel="noopener"><h4>crm-funnel-sql</h4><p>CRM funnel in SQL: stage conversion, win rate by channel, advisor performance, time in stage and monthly cohorts.</p><small>SQL · SQLite · window functions</small></a>
       <a class="repo" href="https://github.com/guilherme-ferracini/advisor-briefing-generator" target="_blank" rel="noopener"><h4>advisor-briefing-generator</h4><p>Personalised daily briefings for investment advisors from their client books and market notes, with optional audio.</p><small>Python · LLM APIs · text-to-speech</small></a>
       <a class="repo" href="https://github.com/guilherme-ferracini/clt-vacation-calculator" target="_blank" rel="noopener"><h4>clt-vacation-calculator</h4><p>Brazilian CLT vacation pay with INSS, IRRF and the 2026 income tax reduction. Rules as data, exact decimal math, fully tested.</p><small>Python · Decimal · pytest</small></a>
     </div>
