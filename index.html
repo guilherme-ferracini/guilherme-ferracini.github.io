@@ -90,6 +90,13 @@
     header{padding:64px 0 48px}
   }
   @media (max-width:520px){.steps{grid-template-columns:1fr}.case dl{grid-template-columns:1fr}.case dt{padding-top:6px}}
+  .repos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .repo{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.15s}
+  .repo:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .repo h4{font-size:17px;margin-bottom:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
+  .repo p{color:#cdd6df;font-size:14.5px}
+  .repo small{display:block;color:var(--muted);font-size:12.5px;margin-top:10px}
+  @media (max-width:860px){.repos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -99,6 +106,7 @@
     <a class="brand" href="#">Guilherme Ferracini<span>.</span></a>
     <ul>
       <li><a href="#work">Work</a></li>
+      <li><a href="#code">Code</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#about">About</a></li>
@@ -186,6 +194,19 @@
         <div class="result">Configuration and compliance issues were caught before they scaled with invoice volume.</div>
         <div class="stack"><span>Process audit</span><span>API payloads</span><span>Tax compliance</span></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <h2>Code samples</h2>
+    <p class="sub">Clean, standalone rewrites of the ideas above, with fictional data, tests and a demo mode that runs without an API key. Python, with Claude or OpenAI as the AI provider.</p>
+    <div class="repos">
+      <a class="repo" href="https://github.com/guilherme-ferracini/pdf-to-erp-extractor" target="_blank" rel="noopener"><h4>pdf-to-erp-extractor</h4><p>Health-plan invoice PDFs → AI extraction → validated payroll import file. Invoices with inconsistent totals are blocked for review.</p><small>Python · pdfplumber · LLM APIs · openpyxl</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/financial-statement-analyzer" target="_blank" rel="noopener"><h4>financial-statement-analyzer</h4><p>Income statement + balance sheet → ratios, rule-based alerts and an AI-written executive summary. Code computes, the model explains.</p><small>Python · LLM APIs · pytest</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/advisor-briefing-generator" target="_blank" rel="noopener"><h4>advisor-briefing-generator</h4><p>Personalised daily briefings for investment advisors from their client books and market notes, with optional audio.</p><small>Python · LLM APIs · text-to-speech</small></a>
+      <a class="repo" href="https://github.com/guilherme-ferracini/clt-vacation-calculator" target="_blank" rel="noopener"><h4>clt-vacation-calculator</h4><p>Brazilian CLT vacation pay with INSS, IRRF and the 2026 income tax reduction. Rules as data, exact decimal math, fully tested.</p><small>Python · Decimal · pytest</small></a>
     </div>
   </div>
 </section>
