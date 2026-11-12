@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guilherme Ferracini · Process Automation & AI Operations</title>
+<meta name="description" content="Guilherme Andretta Ferracini: process automation and AI operations across financial services and accounting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c1117; --panel:#121a23; --line:#223042; --text:#e6edf3; --muted:#9aa7b4;
+    --accent:#4ade80; --accent2:#60a5fa; --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;font-size:16px}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:10;background:rgba(12,17,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-weight:700;letter-spacing:.2px;text-decoration:none}
+  nav .brand span{color:var(--accent)}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+  nav ul a:hover{color:var(--text)}
+  header{padding:96px 0 72px}
+  .eyebrow{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  h1{font-family:Fraunces,Georgia,serif;font-size:clamp(38px,6vw,64px);line-height:1.08;font-weight:700;max-width:900px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{color:var(--muted);font-size:clamp(17px,2vw,20px);max-width:720px;margin-top:22px}
+  .cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);transition:.15s}
+  .btn.primary{background:var(--accent);color:#06210f;border-color:var(--accent)}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.ghost:hover{border-color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:64px}
+  .stat{background:var(--panel);padding:24px}
+  .stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;color:var(--text);line-height:1.15}
+  .stat span{color:var(--muted);font-size:14px}
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,Georgia,serif;font-size:clamp(28px,4vw,38px);margin-bottom:10px}
+  .sub{color:var(--muted);max-width:680px;margin-bottom:40px}
+  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .case{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
+  .case.wide{grid-column:span 2}
+  .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent2);background:rgba(96,165,250,.1);padding:4px 10px;border-radius:999px;margin-bottom:14px;align-self:flex-start}
+  .case h3{font-size:21px;margin-bottom:12px;line-height:1.3}
+  .case dl{display:grid;grid-template-columns:92px 1fr;gap:8px 14px;font-size:15px}
+  .case dt{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.8px;padding-top:2px}
+  .case dd{color:#cdd6df}
+  .result{margin-top:18px;padding:14px 16px;border-left:3px solid var(--accent);background:rgba(74,222,128,.06);border-radius:0 10px 10px 0;font-weight:500}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .stack span{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+  .step{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:Fraunces,Georgia,serif;color:var(--accent);font-size:26px;display:block;margin-bottom:8px}
+  .step h4{font-size:17px;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:14.5px}
+  .timeline{list-style:none;border-left:2px solid var(--line);margin-left:6px}
+  .timeline li{position:relative;padding:0 0 30px 28px}
+  .timeline li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .timeline .when{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.5px}
+  .timeline h4{font-size:18px;margin:2px 0}
+  .timeline .org{color:var(--accent2);font-size:15px;font-weight:500}
+  .timeline p{color:#cdd6df;font-size:15px;margin-top:6px;max-width:760px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .box h3{font-size:18px;margin-bottom:14px}
+  .box ul{list-style:none}
+  .box li{padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;color:#cdd6df}
+  .box li:last-child{border-bottom:none}
+  .box li b{color:var(--text)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-size:14px;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:#cdd6df}
+  .chips-label{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin:18px 0 10px}
+  .chips-label:first-of-type{margin-top:0}
+  .building{display:flex;gap:28px;align-items:flex-start;background:linear-gradient(135deg,rgba(74,222,128,.08),rgba(96,165,250,.06));border:1px solid var(--line);border-radius:16px;padding:32px}
+  .building p{color:#cdd6df}
+  footer{padding:56px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{text-decoration:none;color:var(--text)}
+  @media (max-width:860px){
+    nav ul{display:none}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cases,.two{grid-template-columns:1fr}
+    .case.wide{grid-column:span 1}
+    .steps{grid-template-columns:1fr 1fr}
+    header{padding:64px 0 48px}
+  }
+  @media (max-width:520px){.steps{grid-template-columns:1fr}.case dl{grid-template-columns:1fr}.case dt{padding-top:6px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Guilherme Ferracini<span>.</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Process Automation &amp; AI Operations</div>
+    <h1>I turn manual operations into <em>automated workflows</em>, and I build them myself.</h1>
+    <p class="lead">5+ years across financial services and accounting operations. I map how the work actually gets done, redesign it, and ship the automation with AI, Python, Node.js and React. Based in Londrina, Brazil.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See the work ↓</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/guilherme-andretta-ferracini/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/guilherme-ferracini" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>2–3 days → 15 min</b><span>processing time on AI-automated accounting workflows</span></div>
+      <div class="stat"><b>100+</b><span>client companies and individuals served by the platform I built</span></div>
+      <div class="stat"><b>6 branches</b><span>across 3 states reached by the AI assistant I led at KAT</span></div>
+      <div class="stat"><b>5+ years</b><span>in financial services and accounting operations</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="sub">Real projects, in production, used by real teams. Client names and internal data are kept private.</p>
+
+    <div class="cases">
+      <article class="case wide">
+        <span class="tag">Accounting firm · 2026</span>
+        <h3>HUB Contábil: an automation platform for an accounting firm</h3>
+        <dl>
+          <dt>Problem</dt><dd>Company analyses, balance sheet reading, vacation pay calculations and client file processing were 100% manual. Each one took the team days of reading documents and re-keying data.</dd>
+          <dt>What I did</dt><dd>Mapped each workflow with the people who ran it, then designed and built an internal web platform where AI reads the files clients send, extracts what matters and returns structured results ready for review.</dd>
+          <dt>Scope</dt><dd>Used daily across the firm's accounting team, serving 100+ client companies and individuals. Integrations with the firm's accounting system (Domínio / Thomson Reuters) are being scoped.</dd>
+        </dl>
+        <div class="result">Processes that took 2–3 days now run in about 15 minutes, according to the team that uses it.</div>
+        <div class="stack"><span>React</span><span>Node.js</span><span>Python</span><span>LLM APIs</span><span>Lovable</span><span>Process mapping</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tag">AI document processing</span>
+        <h3>Health-plan module: from client PDFs to the ERP</h3>
+        <dl>
+          <dt>Problem</dt><dd>Client companies sent health-plan statements as PDFs. Staff converted each one into a spreadsheet by hand to feed the accounting system.</dd>
+          <dt>What I did</dt><dd>Built a module where AI reads the PDFs and produces the structured spreadsheet in the format the accounting system expects.</dd>
+        </dl>
+        <div class="result">A fully manual re-keying step was removed from a recurring monthly routine.</div>
+        <div class="stack"><span>AI extraction</span><span>Data structuring</span><span>ERP input</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tag">Investment advisory · 2025</span>
+        <h3>KAT.IA: an AI assistant for investment advisors</h3>
+        <dl>
+          <dt>Problem</dt><dd>Advisors spent time on operational questions and on preparing market context for each client relationship.</dd>
+          <dt>What I did</dt><dd>Led the project end to end: a text assistant inside Microsoft Teams for day-to-day questions, plus automated, personalised audio briefings sent to each advisor based on their client portfolio and the macro and micro scenario.</dd>
+        </dl>
+        <div class="result">Launched to the advisory team of an office with 6 branches across 3 states.</div>
+        <div class="stack"><span>LLM APIs</span><span>Microsoft Teams</span><span>Audio briefings</span><span>Automation</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tag">Client experience</span>
+        <h3>Client portals: one channel for documents</h3>
+        <dl>
+          <dt>Problem</dt><dd>Documents moved between clients and the firm over scattered channels, which slowed down filing and reading.</dd>
+          <dt>What I'm building</dt><dd>A portal for all of the firm's clients to exchange, submit and read documents, plus a dedicated portal for one of the firm's largest clients.</dd>
+        </dl>
+        <div class="stack"><span>React</span><span>Web platform</span><span>Workflow design</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tag">Advisory</span>
+        <h3>Fiscal-operational diagnostic for a SaaS client</h3>
+        <dl>
+          <dt>Problem</dt><dd>A SaaS client was already issuing electronic invoices through an API integration, set up without fiscal review.</dd>
+          <dt>What I did</dt><dd>Audited the live configuration and the data being sent on real invoices, and mapped the gaps against the client's tax planning, with the corrections needed.</dd>
+        </dl>
+        <div class="result">Configuration and compliance issues were caught before they scaled with invoice volume.</div>
+        <div class="stack"><span>Process audit</span><span>API payloads</span><span>Tax compliance</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <p class="sub">The same loop, whether the workflow is a monthly tax routine or a sales process across branches.</p>
+    <div class="steps">
+      <div class="step"><h4>Diagnose</h4><p>Sit with the people doing the work and map every step, input and handoff as it really happens.</p></div>
+      <div class="step"><h4>Simplify</h4><p>Remove steps before automating them. Standardise inputs and outputs.</p></div>
+      <div class="step"><h4>Automate</h4><p>Build the solution: AI for reading and judgement, code for the rest, people kept in the loop where it matters.</p></div>
+      <div class="step"><h4>Measure</h4><p>Track time, errors and adoption, then iterate with the team that uses it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="sub">From sales and investment advisory to BI, CRM and automation, always close to operations.</p>
+    <ul class="timeline">
+      <li><div class="when">JUN 2026 – PRESENT</div><h4>Automation &amp; AI Lead</h4><div class="org">Molina Assessoria Contábil · Londrina</div><p>Leading automation and AI at an accounting and tax advisory firm: HUB Contábil, AI document processing and client portals.</p></li>
+      <li><div class="when">JAN 2024 – JUN 2026</div><h4>BI &amp; CRM Analyst → CRM Specialist</h4><div class="org">KAT Investimentos (Safra Invest affiliated office)</div><p>Owned CRM operations and BI reporting for advisors and leadership across 6 branches. Led the KAT.IA project.</p></li>
+      <li><div class="when">JUN 2021 – DEC 2023</div><h4>Sales Development Representative → Investment Advisor</h4><div class="org">Bravus Investimentos (XP) · SVN Investimentos (XP) · KAT Investimentos</div><p>Client acquisition, portfolio advisory and relationship management. ANCORD-certified advisor.</p></li>
+      <li><div class="when">DEC 2020 – MAY 2021</div><h4>Tax Department Assistant</h4><div class="org">Molina Assessoria Contábil</div><p>Tax compliance for companies across all Brazilian tax regimes.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>Background &amp; skills</h2>
+    <p class="sub">An accountant who codes, with a financial-markets background.</p>
+    <div class="two">
+      <div class="box">
+        <h3>Education &amp; certifications</h3>
+        <ul>
+          <li><b>B.Sc. Accounting</b>, UniFil (2023–2024)</li>
+          <li>Accounting coursework, Universidade Estadual de Londrina – UEL (2020–2022)</li>
+          <li><b>ANCORD</b>, Brazilian investment advisor certification</li>
+          <li>Automation with Artificial Intelligence, Adapta (2023–2024)</li>
+          <li><b>Languages:</b> Portuguese (native), English (fluent)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Toolkit</h3>
+        <div class="chips-label">Automation &amp; AI</div>
+        <div class="chips"><span>Workflow mapping</span><span>AI agents</span><span>LLM APIs</span><span>Prompt engineering</span><span>Document AI</span></div>
+        <div class="chips-label">Build</div>
+        <div class="chips"><span>Python</span><span>Node.js</span><span>React</span><span>REST APIs</span><span>Lovable</span></div>
+        <div class="chips-label">Data &amp; business</div>
+        <div class="chips"><span>Advanced Excel</span><span>Power BI / Tableau</span><span>CRM platforms</span><span>Brazilian tax &amp; accounting</span></div>
+      </div>
+    </div>
+
+    <div class="building" style="margin-top:20px">
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px">Currently building</div>
+        <p>An applied-AI education venture: online courses teaching people to use AI in their work, plus the <b>Expediente</b> newsletter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Guilherme Andretta Ferracini</div>
+    <div><a href="https://www.linkedin.com/in/guilherme-andretta-ferracini/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://github.com/guilherme-ferracini" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
